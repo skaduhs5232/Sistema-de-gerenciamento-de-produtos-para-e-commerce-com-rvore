@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Seus outros cabeçalhos vão aqui -->
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Mercadinho</title>
+
+    <title>Mercadinho</title>
+</head>
+
+<body>
+    <header>
+        <h1>Mercadinho</h1>
+    </header>
+    <div id="confetti-container"></div>
+
+    <div class="botoes">
+        <button id="toggleMode" onclick="toggleMode()">Dark Mode</button>
+        <button style="margin-left: 10px;" onclick="resetCardPositions()">Resetar Posições</button>
+    </div>
+
+
+
+    <div class="card" style=" display: flex; align-content: center; justify-content: center;">
+        <h2>Catálogo do Mercadinho</h2>
+    </div>
+    <div class="conteudo">
+        <div class="card">
+            <div class="bolinha vermelha"></div>
+            <div class="bolinha amarela"></div>
+            <div class="bolinha verde"></div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+            <h2>Adicionar Produto</h2>
+            <form id="addProductForm">
+                ID: <input type="text" id="productId" required><br>
+                Nome: <input type="text" id="productName" required><br>
+                Descrição: <input type="text" id="productDescription" required><br>
+                Preço: <input type="number" id="productPrice" required><br>
+                Categoria: <input type="text" id="productCategory" required><br>
+                <button type="button" onclick="addProduct()">Adicionar Produto</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="bolinha vermelha"></div>
+            <div class="bolinha amarela"></div>
+            <div class="bolinha verde"></div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+            <h2>Procurar Produto</h2>
+            <form id="searchProductForm">
+                Procurar pelo ID: <input type="text" id="searchProductId" required>
+                <button type="button" onclick="searchProduct()">Buscar</button>
+            </form>
+            <div id="searchResult"></div>
+        </div>
+
+        <div class="card">
+            <div class="bolinha vermelha"></div>
+            <div class="bolinha amarela"></div>
+            <div class="bolinha verde"></div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+            <h2>Atualizar Produto</h2>
+            <form id="updateProductForm">
+                ID: <input type="text" id="updateProductId" required><br>
+                Novo Preço: <input type="number" id="newPrice" required><br>
+                Nova Descrição: <input type="text" id="newDescription" required><br>
+                <button type="button" onclick="updateProduct()">Atualizar Produto</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="bolinha vermelha"></div>
+            <div class="bolinha amarela"></div>
+            <div class="bolinha verde"></div>
+            <div class="barra"></div>
+            <div class="barra2"></div>
+            <h2>Lista de Produtos por Categoria</h2>
+            <form id="listProductsForm">
+                Categoria: <input type="text" id="listCategory" required><br>
+                <button type="button" onclick="listProducts()">Listar Produtos</button>
+            </form>
+            <ul id="listResult"></ul>
+        </div>
+
+        <div class="cardLista">
+            <div class="bolinha vermelha"></div>
+            <div class="bolinha amarela"></div>
+            <div class="bolinha verde"></div>
+           
+            <div class="barraa"></div>
+            <div class="barraa2"></div>
+          
+            <h2>Lista de Todos os Produtos</h2>
+            <table class="table" id="allProductsTable" border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Categoria</th>
+                    </tr>
+                </thead>
+                <tbody id="allProductsList"></tbody>
+            </table>
+        </div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
